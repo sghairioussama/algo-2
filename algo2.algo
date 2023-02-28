@@ -1,0 +1,23 @@
+ALGORITHM dis_element
+
+
+VAR
+   t1: ARRAY OF INTEGER = [3, 1, 7, 9];
+   t2: ARRAY OF INTEGER = (2, 4, 1, 9, 3);
+   sum:INTEGER=0;
+
+BEGIN
+  distinct_set := {};
+   FOR i IN 1..LENGTH(t1) DO
+      distinct_set := distinct_set UNION {t1[i]};
+   END_FOR
+   
+   FOR i IN 1..LENGTH(t2) DO
+      distinct_set := distinct_set UNION {t2[i]};
+   END_FOR
+   
+   FOR element IN distinct_set DO
+      sum := sum + element;
+   END_FOR
+   write(sum) 
+   END
